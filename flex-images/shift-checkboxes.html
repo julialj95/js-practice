@@ -92,6 +92,19 @@
       </div>
     </div>
 
-    <script></script>
+    <script>
+      let checked = [...document.querySelectorAll(".item")];
+      console.log(checked);
+      checked.forEach((item) => item.addEventListener("click", checkItems));
+
+      function checkItems(e) {
+        //find index of first item clicked,
+        let index1 = checked.findIndex((item) => item.ariaChecked);
+        console.log(index1);
+        if (e.shiftKey) {
+          console.log("shift pressed");
+        }
+      }
+    </script>
   </body>
 </html>
